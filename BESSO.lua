@@ -7333,11 +7333,11 @@ return false
 end
 
 if text == 'تفعيل الردود' and Manager(msg) then  
-send(msg.chat_id_, msg.id_, '¦📮 تم تفعيل الردود')
+send(msg.chat_id_, msg.id_, '🗳¦ تم تفعيل الردود')
 database:del(bot_id..'lock:add'..msg.chat_id_)
 end
 if text == 'تعطيل الردود' and Manager(msg) then  
-send(msg.chat_id_, msg.id_, '¦📮 تم تعطيل الردود')
+send(msg.chat_id_, msg.id_, '📮¦ تم تعطيل الردود')
 database:set(bot_id..'lock:add'..msg.chat_id_, true)
 end
 
@@ -7523,7 +7523,7 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
-if text == "شبيك" or text == "شبيك انت" then
+if text == "شبيك" or text == "شبيج" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = {"انت/ي شبيك/ج😣","مابيه شي تسلم 💋😹" }
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
@@ -8433,7 +8433,6 @@ Text = [[
 🔘¦ تنزيل ادمن بكل الصلاحيات
 ⚡¦ تفعيل/تعطيل الحظر
 ⚡¦ تفعيل/تعطيل الرفع
-📮¦ تفعيل/تعطيل الردود
 ~~~~~~~~~~~~~~~~~~~
 🔖¦ CH » @BESSO500K
 ]]
@@ -8517,72 +8516,6 @@ t =[[
 ]]
 send(msg.chat_id_, msg.id_,t) 
 return false
-end
-
-if text then
-local NewCmmd = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..data.message_.content_.text_)
-if NewCmmd then
-data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
-end
-end
-if (text and text == "تعطيل اوامر التحشيش") then 
-send(msg.chat_id_, msg.id_, '¦📮تم تعطيل اوامر التحشيش')
-database:set(bot_id.."Fun_Bots:"..msg.chat_id_,"true")
-end
-if (text and text == "تفعيل اوامر التحشيش") then 
-send(msg.chat_id_, msg.id_, '¦📮تم تفعيل اوامر التحشيش')
-database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
-end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'بيسو')
-if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
-if text ==  ""..Name_Bot..' شنو رئيك بهذا' and tonumber(msg.reply_to_message_id_) > 0 then     
-function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرتهہ‌‏ 😒','خوش ولد و وردهہ‌‏ مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعتهہ‌‏ الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربهہ‌‏ جنها مكناسهہ‌‏ 😂🤷🏼‍♀️','اموت عليهہ‌‏ 🌝','هوهہ‌‏ غير الحب مال اني 🤓❤️','مو خوش ولد صراحهہ‌‏ ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقهہ‌‏ كل ما اكمشهہ‌‏ ريحتهہ‌‏ جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
-send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
-end   
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end  
-if text == ""..Name_Bot..' شنو رئيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 then    
-function FunBot(extra, result, success) 
-local Fun = {'الكبد مال اني هہ‌‏يهہ‌‏ ','ختولي ماحبها ','خانتني ويهہ‌‏ صديقي 😔','بس لو الكفها الهہ‌‏ اعضها 💔','خوش بنيهہ‌‏ بس عدهہ‌‏ مكسرات زايدهہ‌‏ وناقصهہ‌‏ منا ومنا وهہ‌‏يهہ‌‏ تدري بنفسها 😒','جذابهہ‌‏ ومنافقهہ‌‏ سوتلي مشكلهہ‌‏ ويهہ‌‏ الحب مالتي ','ئووووووووف اموت ع ربها ','ديرو بالكم منها تلعب ع الولد ?? ضحكت ع واحد قطتهہ‌‏ ايفون 7 ','صديقتي وختي وروحي وحياتي ','فد وحدهہ‌‏ منحرفهہ‌‏ 😥','ساكنهہ‌‏ بالعلاوي ونتهہ‌‏ حدد بعد لسانها لسان دلالهہ‌‏ 🙄🤐','ام سحورهہ‌‏ سحرت اخويا وعلكتهہ‌‏ 6 سنوات 🤕','ماحبها 🙁','بلهہ‌‏ هاي جهہ‌‏رهہ‌‏ تسئل عليها ؟ ','بربك ئنتهہ‌‏ والله فارغ وبطران وماعدك شي تسوي جاي تسئل ع بنات العالم ولي يلهہ‌‏ 🏼','ياخي بنيهہ‌‏ حبوبهہ‌‏ بس لبعرك معمي عليها تشرب هواي 😹' } 
-send(msg.chat_id_,result.id_,''..Fun[math.random(#Fun)]..'') 
-end  
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end    
-end
-if text and text:match('^'..Name_Bot..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..Name_Bot..' ','')
-end
------------------BESSO___________________
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'بيسو')
-if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
-if text ==  ""..Name_Bot..' بوسه' or text ==  ""..Name_Bot..' مصه' and tonumber(msg.reply_to_message_id_) > 0 then     
-function FunBot(extra, result, success) 
-local Fun = {'اععع 🤢خده بي حب شباب الوصخ😹😹','موااح 💋 مواااح  حياتي💋😌','💋😞نسخ لصق ع الشفه 👄'}
-send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
-end   
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end  
-if text == ""..Name_Bot..' بوت هينه' or text == ""..Name_Bot..'بوت رزله' and tonumber(msg.reply_to_message_id_) > 0 then    
-function FunBot(extra, result, success)
- if tonumber(result.sender_user_id_) == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, 'اانجب لك اهينك وما اهين مطوري الغالي😂🥺')
-return false  end
-if tonumber(result.sender_user_id_) == tonumber(bot_id) then
-send(msg.chat_id_, msg.id_, 'نجب للاسف ماكدر اهين نفسي تنجرح حساسي 😞😂')
-return false  end
-local Fun = {'لك دايح ، احترم نفسك لا بال شحاطه مال عجايز 👠😠','لك ها عار ترجيه ، اكعد راحه ترا روحي طالعه ليش ابول عليك 😐','ها ابن حنان، ليش متسكت وتنجب 🌚','تعال لك ابو دوده مستنقع 😹👻','حبيبي شدا تحس انته هسه من تكمز !؟ دبطل حركتك هاي 🌝❤️','يمعود هاذا من جماعة الاعطواني 😹'الك ها مطي لا تلبس نعالي وتروح','😱😄'}
-send(msg.chat_id_,result.id_,''..Fun[math.random(#Fun)]..'') 
-end  
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end    
-end
-if text and text:match('^'..Name_Bot..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..Name_Bot..' ','')
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -8746,11 +8679,8 @@ local taha ={
 '\n شكو غيرت معرفك شنو قطيت وحده جديده 😹😹🌚',
 '\n شو غيرت معرفك شنو تعاركت ويه الحب ؟😹🌞',
 '\n ها ولك مو جان  معرفك   '..tahan..'  شكو غيرته ',
-'\n ها شو مبدل معرف يعار ؟؟😔😂'
 '\n شكو غيرت معرفك شسالفه ؟؟ 🤔🌞'
-'\n غير معرف اخمطو بساع ؟؟😂😂'
 }
-
 send(msg.chat_id_,msg.id_,taha[math.random(#taha)])
 database:set(bot_id.."Chen:User:Name"..msg.sender_user_id_, data.username_) 
 return false
