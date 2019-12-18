@@ -7183,12 +7183,12 @@ end
 end
 else
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, taha.photos_[0].sizes_[1].photo_.persistent_id_,'╗ الصوره ← '..rdphoto..'\n╣ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ المستوئ ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╝ السحكات ← '..edit..'\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
+send(msg.chat_id_, msg.id_,'[\n╗ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ صورك ← '..photps..'\n╣ تفاعلك ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╣ نسبه تفاعلك ← '..string.sub(nspatfa, 1,5)..' %\n╣  السحكات ← '..edit..'\n╗ مجوهراتك ← '..NUMPGAME..']\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n╗ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ المستوئ ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╝ السحكات ← '..edit..']\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
+send(msg.chat_id_, msg.id_,'[\n╗ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ صورك ← '..photps..'\n╣ تفاعلك ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╣ نسبه تفاعلك ← '..string.sub(nspatfa, 1,5)..' %\n╣  السحكات ← '..edit..'\n╗ مجوهراتك ← '..NUMPGAME..']\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
 else
-send(msg.chat_id_, msg.id_, '\n╗ الصوره ←  ليس لديك صور في حسابك 🍃'..'[\n╣ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ المستوئ ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╝ السحكات ← '..edit..']\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
+send(msg.chat_id_, msg.id_, '\n╗ الصوره ←  ليس لديك صور في حسابك 🍃'..'(msg.chat_id_, msg.id_,'[\n╗ ايديك ← '..msg.sender_user_id_..'\n╣ معرفك ← '..username..'\n╣ رتبتك ← '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n╣ صورك ← '..photps..'\n╣ تفاعلك ← '..Total_Msg(Msguser)..'\n╣ رسائلك ← '..Msguser..'\n╣ نسبه تفاعلك ← '..string.sub(nspatfa, 1,5)..' %\n╣  السحكات ← '..edit..'\n╗ مجوهراتك ← '..NUMPGAME..']\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
 end 
 end
 end
@@ -8402,6 +8402,95 @@ Text = [[
 ~~~~~~~~~~~~~~~~~~~
 🔖¦ CH » @BESSO500K
 ]]
+send(msg.chat_id_, msg.id_,Text_Games) 
+end
+if text and text:match("^تغير رد المطور (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد المطور (.*)$") 
+database:set(bot_id.."Sudo:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد المطور الى » "..Teext)
+end
+if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
+database:set(bot_id.."BasicConstructor:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد المنشئ الاساسي الى » "..Teext)
+end
+if text and text:match("^تغير رد المنشئ (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد المنشئ (.*)$") 
+database:set(bot_id.."Constructor:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد المنشئ الى » "..Teext)
+end
+if text and text:match("^تغير رد المدير (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد المدير (.*)$") 
+database:set(bot_id.."Manager:Rd"..msg.chat_id_,Teext) 
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد المدير الى » "..Teext)
+end
+if text and text:match("^تغير رد الادمن (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد الادمن (.*)$") 
+database:set(bot_id.."Mod:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد الادمن الى » "..Teext)
+end
+if text and text:match("^تغير رد المميز (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد المميز (.*)$") 
+database:set(bot_id.."Special:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد المميز الى » "..Teext)
+end
+if text and text:match("^تغير رد العضو (.*)$") and Manager(msg) then
+local Teext = text:match("^تغير رد العضو (.*)$") 
+database:set(bot_id.."Memp:Rd"..msg.chat_id_,Teext)
+send(msg.chat_id_, msg.id_,"👥| تم تغير رد العضو الى » "..Teext)
+end
+
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help'..msg.sender_user_id_)
+database:set(bot_id..'help_text',text)
+return false
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help1'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help1'..msg.sender_user_id_)
+database:set(bot_id..'help1_text',text)
+return false
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help2'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help2'..msg.sender_user_id_)
+database:set(bot_id..'help2_text',text)
+return false
+end
+end
+
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help3'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help3'..msg.sender_user_id_)
+database:set(bot_id..'help3_text',text)
+return false
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help4'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help4'..msg.sender_user_id_)
+database:set(bot_id..'help4_text',text)
+return false
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id..'help5'..msg.sender_user_id_) == 'true' then
+send(msg.chat_id_, msg.id_, '📮¦ تم حفظ الكليشه بنجاح')
+database:del(bot_id..'help5'..msg.sender_user_id_)
+database:set(bot_id..'help5_text',text)
+return false
+end
+end
+
+
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
@@ -8721,7 +8810,7 @@ local username = data.username_
 local name = data.first_name_
 local iduser = data.id_
 local users = ('[@'..data.username_..']' or iduser)
-send(msg.chat_id_,0,'⚠¦ تم التعديل على الميديا \n\n📌¦ الشخص الي قام بالتعديل\n➺➺➺ •⊱{ '..users..' }⊰•') 
+send(msg.chat_id_,0,'⚠¦ تم التعديل على الميديا \n\n??¦ الشخص الي قام بالتعديل\n➺➺➺ •⊱{ '..users..' }⊰•') 
 end,nil)
 DeleteMessage(msg.chat_id_,{[0] = msg.message_id_}) 
 end
