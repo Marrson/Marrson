@@ -7364,7 +7364,7 @@ end
 
 if text == "🙊" or text == "*" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = 👤¦ العضو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
+local texting = 👤¦ العضو » ['..result.title_..']
 📫¦ تم ترقيته رفع مطي🦓
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
