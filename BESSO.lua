@@ -1333,7 +1333,7 @@ end
 end 
 --------------------------------------------------------------------------------------------------------------
 if text and database:get(bot_id..'lock:Fshar'..msg.chat_id_) and not Manager(msg) then 
-list = {"كس","كسمك","كسختك","عير","كسخالتك","خرا بالله","عير بالله","كسخواتكم","كحاب","مناويج","مناويج","كحبه","ابن الكحبه","فرخ","فروخ","طيزك","طيزختك"}
+list = {'عير','كس','كحبه','كساسه','مناويج','تنيجون','سكسي','xxnx','XXNX','xxxn','XXXN','كوسي','عيري','موجب','سالب','بلاع العير','بلاع الكس','مصاص الخصوه','ابن الكس','ابن العار','ابن العاهره','عاهره','منيوج','فرخ','فروخ','بلاع','كواد','كواده','منيوجه','سكس','نجتهم','بعصته','بعصتهم','ناجني','نجته','بعصني','عيري','عيرك','كسك','fuck','FUCK','sexy','SEXY','نيج','ناجونه','نجناهم','بعصناهم','خصاوي','عيوره','كساسه','طيزك','طيزي','كيري كن امك','كيرى','كيرى كن امك','تنيج','ناجوك','بی ناموس','کسکش','كير خوار','كسليس','ننه گوزو','ننه كسكش','بی پدر','پدر کونی','كسننه','جنده','مادره جنده','بي ناموس','بي شرف','كسننت','بي پدر ومادر','خواهر جنده','ننه كونى','پسر کونی','کیرم تو مادرت','کیرم تو خانوادت','پدر سگ','پدر کونی','خواهرت گاییدم','مادرت گاییدم'}
 for k,v in pairs(list) do
 if string.find(text,v) ~= nil then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_}) 
@@ -7332,6 +7332,254 @@ end
 return false
 end
 
+if text == 'تفعيل الردود' and Manager(msg) then  
+send(msg.chat_id_, msg.id_, '🗳¦ تم تفعيل الردود')
+database:del(bot_id..'lock:add'..msg.chat_id_)
+end
+if text == 'تعطيل الردود' and Manager(msg) then  
+send(msg.chat_id_, msg.id_, '📮¦ تم تعطيل الردود')
+database:set(bot_id..'lock:add'..msg.chat_id_, true)
+end
+
+if text == "السلام عليكم" or text == "سلام عليكم" or text == "سلام" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"و͠ع͠ل͠ي͠گ͠م͠ س͠ل͠آ͠م͠ ن͠و͠رت͠😍💋✨","ي͠م͠ه͠ ه͠ل͠آ͠ ب͠آ͠ل͠غ͠آ͠ل͠ي͠/ل͠ي͠ه͠ ب͠ب͠گ͠ن͠ آ͠ز͠ح͠ف͠😻 ♛⇣🐰☄️₎✦","وعليكم السلام حياتي ☺️","كافي بس تسلمون شكد تلحون ماشبعتو 🌝💔" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "شلونك" or text == "شلونكم" or text == "شلونج" or text == "شونج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"ت͠م͠آ͠م͠ و͠آ͠ن͠ت͠/ي͠ 💔ۦ","شہعہُلہيہكُہ ٳنٍتہ 🧐😂ٻًخہيہر ٳنٍتہ/يہ شہلہﯝنٍكُہ/جہ ☺️🙊﴾" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "ممكن نزوج" or text == "ممكن نرتبط" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"ها يمعودين منا عالم😒😹","اعتقد اني مو صخله ويربطوني🥺😹","للسف مربوطه بشجره😔😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "رفع مطي" or text == "*" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = 👤¦ العضو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
+📫¦ تم ترقيته رفع مطي🦓
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "الخميس" or text == "خميس" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"وخرو وخرو حسون شغل المعزوفه هلا بلخميس تيرارا وياي يله ردحو اليوم الخميس يعني اليوم الحمر😍😹","عيني اليوم السبوعيات زينه والعطله الحنينه شد يابه شد💃😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "هلو" or text == "هاي" or text == "هلاو" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {" ﮩلُآوُآتْ حيُآتْيُ  •💝ֆ﴿♂✨₎ֆ","يۧمۘهِ هِلۛا بصورُهِا ونۨورُهِا 😻🐼🌿"," لأ هلأ ولأ مہرحہبہه بہلثہول شہلونہكہ يہول 😻😂✨","هلنہ وسہهلنہ بہزأحہفہنہه 🐸😂✨" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "شنو هذا بوت" or text == "هذا بوت" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"عـٰٰـٰود لوتُٰي صاير براسي حبيبي اي بوت باقي وتمدد للصبح لا تخاف مخليك تنشر شي🤤😹😳","اي لا مو بوت شرايد خير يا طير😤" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "غني" or text == "غنيلي" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"ش͠گ͠ل͠و͠ل͠گ͠ ع͠ل͠ي͠ه͠ ن͠و͠ر ز͠ي͠ن͠ گ͠ب͠آ͠ل͠گ͠🥺😹💭💔ۦ","ص͠و͠ت͠ي͠ م͠ز͠ن͠ج͠ر ل͠ل͠س͠ف͠ ج͠آ͠ن͠ غ͠ن͠ي͠ت͠ل͠گ͠ ت͠آ͠ي͠ب͠ي͠ن͠ 😍😂 🌸‘","أذوبہ وشہربہ حہبہوبہ وسہرسہريہ ومہأتہوبہ عہمہيہ يہبہو ألبہأر صہبہليہ ألبہلبہيہ تہرأ أنہيہ سہكہرأنہ وصہأيہر عہصہبہيہ أنہه ويہأجہ يہمہ شہأمہه  ⚡️🔱ۦ","خۡاوهِ الۛكَرُوب مۘانۨنۨطيۧ اوكَفُ كَومۘ مۘنۨ ּتحۡ ۖجۚيۧ ويۧا الּۛثكَالۛ لۛا ּتغلۛط ويۧانۨهِ نۨصيۧرُ زَلۛزَالۛ خۡاوهِ الۛكَرُوب مۘانۨنۨطيۧ  مۘا ּتكَدُرُ علۛيۧنۨهِ💃💃😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "باي" or text == "رايح" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"بايات حياتي بلا رجعه 💛","گلعه حشمر وراك مي حتره ترد بسلامه😔😹💔","الله ومحمد وعلي  😻😂","ميثالا 😂🌝✋🏾" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "جاو" or text == "ججاو" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"لا تكول جاو كول باي مطي😳شاقه جايات😹","جاوات ₎✿❥" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "نورت" or text == "منور" or text == "منوره" or text == "نورتي" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"نورك/ج هذا يل غالي/يه 🌝","بوجودك/غلا تسلم 😻✨","ضواج حركني وحرك جيراني 😋","نورك عماني وحرك جيراني 😣😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "بوسني" or text == "بوسه" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"موواحح💋😘","مابوس ولي بيك/ج جرب😌😹","حلكك/ج نضيف 😂","للاسف مابوس صخلاه 🌝💋","خلي يزحفلي خاص وابوسه 🙊😻","حبي اسف ما ابوس صار البوس بلفين 😏","اف شهل جماله امح عشفه","مابوس اهل الوصخ😐😂"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "امك" or text == "امج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"امج تموت غير 🙀😹","شبيها امك الحلوه🤤😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "خالتك" or text == "خالتج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"شبيه الشكره ازوجها 🤭😹","","شرايد من خالته غير للبوس 🤭😂","خالته تفلش بغمزه تسوي بيك جلطه😶😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "تف" or text == "تفف" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"تف بنص وجهك 😒😹","تف ابلع حبي 😻😹","ما اسمحلك ترا اهينك 😡😹","بدون تفال منا بنات حلوات لا تجي بوجهن ويخرب المكايج يسيل 😹😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😂" or text == "😂😂" or text == "😂😂😂😂" or text == "😂😂😂" or text == "😹😹" or text == "😹😹😹" or text == "😹" or text == "😹😹😹😹" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"كافـي ضحــك ولو هيا خربانه 😐","لا تضحك هواي مو زين 🌝😹","هذ شبي مصيويل بس يضحك 🙀??","اضحك هيه الدنيا خربانه بعد روحي  😂😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😡" or text == "😡😡" or text == "😡😡😡" or text == "😡😡😡😡" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"لصير عصبي لا يصير عمدك جالي 😌😂","باع وجه عبسي جنه وجه مرتي الله يرحمها 🙊😹","شحلاتك ونته ضايج جنك عادل عبد المهدي ترا اجق دكمت النتر نيت😹😂","شبي هذا الحلبوسي ضاج اهو ارجعو البيوتكم ماكو مضاهرات 😼😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😒" or text == "😒😒" or text == "😒😒😒" or text == "😒😒😒😒" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = { " شبي ابو العدس ضاج 🤭😹","يمه زعلان مقدته ابو حفاضه 😻😹","عدل جهرتك/ج ابو كمل ام كمل 😼👊🏼" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "🌝" or text == "🌝🌝" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"يمه شحلات الكمر مضوي الكروب 🙊😻","عود هوا نضيف شوفوني وهوا كاتله الوصخ 😹😹","كافي حبي لا تهمبل ترا وصخت الكروب بضواك 😼😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "💋" or text == "💋💋" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"كبر عيع صار عندي تسوس 🙀 جان ستحيتو الخاص موجود 😹😹","عسل +🐸 😋🙊" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "💔" or text == "💔💔" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"شبي مكسور اذا مكسور داوي 😔💔","شبي كلبك/ج مكسور اوديك ع ابو صيدله يضمده 😔😹","اكل اكل ثوم ونسه العافك ومشه علقل ثوم ريحته طيبه بس هوا جرب لازك بي 😻😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😻" or text == "😻😻" or text == "😍😍" or text == "😍" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"ها عار ناوي تخوني🌚😹","استقر لا تنطرد 😹😹","ها عار زحفت🐸" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😐" or text == "🙂" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"شبيك حبيبي هذا وجهك يطرد نعمه 😂💔","منور جمعه العتاك 😐😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "جوعان" or text == "جوعانه" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"روح شتري فلافل😟😔مالي خلك" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "ههه" or text == "هههه" or text == "ههههه" or text == "هههههه" or text == "ههههههه" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"دووم  🙊","دوم الضحكه حبيبي/تي ℡̮⇣┆👑😻⇣ۦ ٰ" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "اكلك" or text == "اكلج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"اي دا اسمع 👂🏽😹","كافي شكد تحجي😔😹","ها حياتي 🙊" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "شبيك" or text == "شبيج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"انت/ي شبيك/ج خما بيج كمل😣","شبيك انكلش هاي انته لو غيرك 💋😹" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "🌚💔" or text == "💔" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"هم اجانه محترك وجه😂♥️","هاي منو كاسر كلبك😡","اهو هم اجانه صخام🐸👌" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "فديتك" or text == "فديتج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"هاي شحرك وجهك/جهج ولك/ج😂♥️","هاي منو كاسر كلبك ها بس لا عافتك جكمه😡","اهو هم اجانه المحترك👌" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "😢" or text == "😢😢" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"شبي العبادي يبجي😜😹","هاي عود انت جبير كاعد تبجي شبيك 😑💔","لتلح درينه تبجي حجيبلك ابو العدس😒"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "ميتين" or text == "وينكم" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"علساس انت متفاعل تفاعل لا بطاوه😒😒","موجود حارسكم باقي وتمدد","انته تصيح ورايح تزحف" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "انجب" or text == "نجب" or text == "أنجب" or text == "نجبب" or text == "جب" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"نجب انت  😤","بيك مرض الا تتحارش ترا اصيح المدير😒","اهو  هم اجه الملطلط ويغلط" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "☺️" or text == "☺☺" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"عود اني حباب ونت بليس يتعلم منك🙈😂","وجهك بي كرش ميساعد🤢😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
+if text == "اجه" or text == "اجت" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"اهو لا هلا ولا مرحبا ✨😂","اهو اجه المزعج"," كافي كساع جيت اجيت شكد مزعج😒😂" }
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+end
+
 if text == 'سمايلات' or text == 'سمايل' then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -8048,6 +8296,7 @@ Text = [[
 🔏¦ الماركداون
 🔏¦ الكلايش
 🔏¦ التكرار
+🔏¦ الردود
 ~~~~~~~~~~~~~~~~~~~
 🔖¦ CH » @BESSO500K
 ]]
