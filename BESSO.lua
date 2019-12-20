@@ -7747,22 +7747,6 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
-if text == "رفع مطي" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"🦓¦اهلن عزيزي تم رفع مطي🦓
-🏃‍♂¦هاك حبي استلم العربانه وبيع قواطي😹🤞" }
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-
-if text == "تنزيل مطي" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"🦸‍♀¦اهلن عزيزي تم تنزيل مطي🦓
-😢¦يله حبي نتهت خدمتك سلم العربانه وفلوس القواطي👴" }
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-
 if text == 'سمايلات' or text == 'سمايل' then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
