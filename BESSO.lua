@@ -7362,7 +7362,7 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
-if text == "رفع مطي" or text == "*" then
+if text == "🙊" or text == "*" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = 👤¦ العضو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
 📫¦ تم ترقيته رفع مطي🦓
