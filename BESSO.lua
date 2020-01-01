@@ -1307,7 +1307,7 @@ return false
 end
 end 
 --------------------------------------------------------------------------------------------------------------
-if BESSO_Msg and not Special(msg) then  
+if text and not Special(msg) then  
 local BESSO_Msg = database:get(bot_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
 if BESSO_Msg then    
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
@@ -1736,6 +1736,56 @@ DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 elseif database:get(bot_id.."lock:Spam"..msg.chat_id_) == "ktm" and string.len(msg.content_.text_) > (sens) or ctrl_ > (sens) or real_ > (sens) then 
 database:sadd(bot_id..'Muted:User'..msg.chat_id_,msg.sender_user_id_)
 DeleteMessage(msg.chat_id_,{[0] = msg.id_}) 
+end
+end
+if msg.content_.ID == 'MessageSticker' and not Manager(msg) then 
+local filter = database:smembers(bot_id.."filtersteckr"..msg.chat_id_)
+for k,v in pairs(filter) do
+if v == msg.content_.sticker_.set_id_ then
+tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
+if data.username_ ~= false then
+send(msg.chat_id_,0, "⚠┇عذرا يا » {[@"..data.username_.."]}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n" ) 
+else
+send(msg.chat_id_,0, "⚠┇عذرا يا » {["..data.first_name_.."](T.ME/DEVBESSO)}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n" ) 
+end
+end,nil)   
+DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
+return false   
+end
+end
+end
+------------------------------------------------------------------------
+if msg.content_.ID == 'MessagePhoto' and not Manager(msg) then 
+local filter = database:smembers(bot_id.."filterphoto"..msg.chat_id_)
+for k,v in pairs(filter) do
+if v == msg.content_.photo_.id_ then
+tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
+if data.username_ ~= false then
+send(msg.chat_id_,0,"⚠┇عذرا يا » {[@"..data.username_.."]}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n" ) 
+else
+send(msg.chat_id_,0,"⚠┇عذرا يا » {["..data.first_name_.."](T.ME/DEVBESSO)}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n") 
+end
+end,nil)   
+DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
+return false   
+end
+end
+end
+------------------------------------------------------------------------
+if msg.content_.ID == 'MessageAnimation' and not Manager(msg) then 
+local filter = database:smembers(bot_id.."filteranimation"..msg.chat_id_)
+for k,v in pairs(filter) do
+if v == msg.content_.animation_.animation_.persistent_id_ then
+tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
+if data.username_ ~= false then
+send(msg.chat_id_,0,"⚠┇عذرا يا » {[@"..data.username_.."]}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n") 
+else
+send(msg.chat_id_,0,"⚠┇عذرا يا » {["..data.first_name_.."](T.ME/DEVBESSO)}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n" ) 
+end
+end,nil)   
+DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
+return false   
+end
 end
 end
 
@@ -4153,7 +4203,7 @@ if text == 'مسح الصخوله' and Mod(msg) then
 database:del(bot_id..'Sakl:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '🗑¦  تم مسح  قائمة الاعضاء الصخوله  ')
 end
-if text == ("الصخوله") and Mod(msg) then
+if text == ("الصخول") and Mod(msg) then
 local list = database:smembers(bot_id..'Sakl:User'..msg.chat_id_)
 t = "\n🐴¦ قائمة صخوله المجموعه \n━━━━━━━━━━━━━\n"
 for k,v in pairs(list) do
@@ -7810,7 +7860,7 @@ local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg
 local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_) or 0) 
 local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_) or 0)
 local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
-local username = ('@'..result.username_ or 'لا يوجد')
+local username = '@'..(result.username_ or 'لا يوجد')
 local iduser = msg.sender_user_id_
 local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
 local photps = (taha.total_count_ or 0)
@@ -9274,6 +9324,73 @@ Text = [[
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
+if text == 'منع' and tonumber(msg.reply_to_message_id_) > 0 and Manager(msg) then     
+function cb(a,b,c) 
+textt = '📮| تم منع '
+if b.content_.sticker_ then
+local idsticker = b.content_.sticker_.set_id_
+database:sadd(bot_id.."filtersteckr"..msg.chat_id_,idsticker)
+text = 'الملصق'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح لن يتم ارسالها مجددا')  
+return false
+end
+if b.content_.ID == "MessagePhoto" then
+local photo = b.content_.photo_.id_
+database:sadd(bot_id.."filterphoto"..msg.chat_id_,photo)
+text = 'الصوره'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح لن يتم ارسالها مجددا')  
+return false
+end
+if b.content_.animation_.animation_ then
+local idanimation = b.content_.animation_.animation_.persistent_id_
+database:sadd(bot_id.."filteranimation"..msg.chat_id_,idanimation)
+text = 'المتحركه'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح لن يتم ارسالها مجددا')  
+return false
+end
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, cb, nil)
+end
+if text == 'الغاء منع' and tonumber(msg.reply_to_message_id_) > 0 and Manager(msg) then     
+function cb(a,b,c) 
+textt = '📮| تم الغاء منع '
+if b.content_.sticker_ then
+local idsticker = b.content_.sticker_.set_id_
+database:srem(bot_id.."filtersteckr"..msg.chat_id_,idsticker)
+text = 'الملصق'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح يمكنهم الارسال الان')  
+return false
+end
+if b.content_.ID == "MessagePhoto" then
+local photo = b.content_.photo_.id_
+database:srem(bot_id.."filterphoto"..msg.chat_id_,photo)
+text = 'الصوره'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح يمكنهم الارسال الان')  
+return false
+end
+if b.content_.animation_.animation_ then
+local idanimation = b.content_.animation_.animation_.persistent_id_
+database:srem(bot_id.."filteranimation"..msg.chat_id_,idanimation)
+text = 'المتحركه'
+send(msg.chat_id_, msg.id_,textt..'( '..text..' ) بنجاح يمكنهم الارسال الان')  
+return false
+end
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, cb, nil)
+end
+if text == 'مسح قائمه منع المتحركات' and Manager(msg) then     
+database:del(bot_id.."filteranimation"..msg.chat_id_)
+send(msg.chat_id_, msg.id_,'🔖| تم مسح قائمه منع المتحركات')  
+end
+if text == 'مسح قائمه منع الصور' and Manager(msg) then     
+database:del(bot_id.."filterphoto"..msg.chat_id_)
+send(msg.chat_id_, msg.id_,'🔖| تم مسح قائمه منع الصور')  
+end
+if text == 'مسح قائمه منع الملصقات' and Manager(msg) then     
+database:del(bot_id.."filtersteckr"..msg.chat_id_)
+send(msg.chat_id_, msg.id_,'🔖| تم مسح قائمه منع الملصقات')  
+end
+
 if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
 🗑 ¦ رابط الحذف التلي ،
@@ -9422,7 +9539,7 @@ if Get_Re_Name ~= data.first_name_ then
 tahan = '['..(Get_Re_Name or '')..']'
 taham = '['..data.first_name_..']'
 local taha ={ 
-'\n شكو غيرت اسمك  يا حلو 😹🌚',
+'\n شكو غيرت اسمك  يا حلو ??🌚',
 '\n شهل اسم الفيطي '..taham.. ' \n رجعه ؏ قديم \n '..tahan..'',
 '\n  ها ها شو غيرت اسمك 🤔😹',
 '\n شكو غيرت اسمك شنو قطيت وحده جديده 😹😹🌚',
